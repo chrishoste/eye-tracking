@@ -11,13 +11,13 @@ import UIKit
 
 class Crosshair: UIView {
 
-	let crossRectOne: UIView = {
+	private let crossRectOne: UIView = {
 		let view = UIView()
 		view.backgroundColor = Constants.Colors.crosshairColor
 		return view
 	}()
 
-	let crossRectTwo: UIView = {
+	private let crossRectTwo: UIView = {
 		let view = UIView()
 		view.backgroundColor = Constants.Colors.crosshairColor
 		return view
@@ -30,9 +30,10 @@ class Crosshair: UIView {
 		backgroundColor = UIColor.init(white: 0, alpha: 0.2)
 
 		setupViews()
+		setupDelegates()
 	}
 
-	func setupViews() {
+	private func setupViews() {
 
 		addSubview(crossRectOne)
 		addSubview(crossRectTwo)
@@ -46,7 +47,17 @@ class Crosshair: UIView {
 		crossRectTwo.contraintSize(height: frame.width/12)
 	}
 
+	private func setupDelegates() {
+		Pointer.shared.delegate = self
+	}
+
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+}
+
+extension Crosshair: PointerDelegate {
+	func didUpdatePointer(point: CGPoint) {
+		center = point
 	}
 }

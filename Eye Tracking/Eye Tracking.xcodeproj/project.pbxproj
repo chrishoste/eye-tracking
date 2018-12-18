@@ -14,10 +14,10 @@
 		EA00EB9A21C7C63C00A30258 /* CGPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00EB9921C7C63C00A30258 /* CGPointExtension.swift */; };
 		EA00EB9C21C7E67600A30258 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00EB9B21C7E67600A30258 /* Constants.swift */; };
 		EA00EBA021C7F0C800A30258 /* Crosshair.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00EB9F21C7F0C800A30258 /* Crosshair.swift */; };
+		EA00EBA321C8FDF600A30258 /* Pointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00EBA221C8FDF600A30258 /* Pointer.swift */; };
 		EA05F10821B67D0E00D2C356 /* ARSCNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA05F10721B67D0E00D2C356 /* ARSCNViewController.swift */; };
 		EA05F10A21B6815C00D2C356 /* AutolayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA05F10921B6815C00D2C356 /* AutolayoutExtension.swift */; };
 		EA61774021B026DA001F978B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61773F21B026DA001F978B /* AppDelegate.swift */; };
-		EA61774221B026DA001F978B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61774121B026DA001F978B /* ViewController.swift */; };
 		EA61774721B026DC001F978B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA61774621B026DC001F978B /* Assets.xcassets */; };
 		EA61774A21B026DC001F978B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA61774821B026DC001F978B /* LaunchScreen.storyboard */; };
 		EA61775521B026DC001F978B /* Eye_TrackingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61775421B026DC001F978B /* Eye_TrackingTests.swift */; };
@@ -53,11 +53,11 @@
 		EA00EB9921C7C63C00A30258 /* CGPointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtension.swift; sourceTree = "<group>"; };
 		EA00EB9B21C7E67600A30258 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EA00EB9F21C7F0C800A30258 /* Crosshair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crosshair.swift; sourceTree = "<group>"; };
+		EA00EBA221C8FDF600A30258 /* Pointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Pointer.swift; path = ../../../../../../Documents/Pointer.swift; sourceTree = "<group>"; };
 		EA05F10721B67D0E00D2C356 /* ARSCNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNViewController.swift; sourceTree = "<group>"; };
 		EA05F10921B6815C00D2C356 /* AutolayoutExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutExtension.swift; sourceTree = "<group>"; };
 		EA61773C21B026DA001F978B /* Eye Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eye Tracking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA61773F21B026DA001F978B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA61774121B026DA001F978B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EA61774621B026DC001F978B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA61774921B026DC001F978B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA61774B21B026DC001F978B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,6 +125,14 @@
 			path = Crosshair;
 			sourceTree = "<group>";
 		};
+		EA00EBA121C8FDDE00A30258 /* Singelton */ = {
+			isa = PBXGroup;
+			children = (
+				EA00EBA221C8FDF600A30258 /* Pointer.swift */,
+			);
+			path = Singelton;
+			sourceTree = "<group>";
+		};
 		EA61773321B026DA001F978B = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +160,7 @@
 			children = (
 				EA61774B21B026DC001F978B /* Info.plist */,
 				EA61773F21B026DA001F978B /* AppDelegate.swift */,
+				EA00EBA121C8FDDE00A30258 /* Singelton */,
 				EA61776F21B0276E001F978B /* ViewController */,
 				EA61776D21B02744001F978B /* Storyboards */,
 				EA61777021B02788001F978B /* Helper */,
@@ -198,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				EA00EB9D21C7F0AE00A30258 /* Custom Views */,
-				EA61774121B026DA001F978B /* ViewController.swift */,
 				EA05F10721B67D0E00D2C356 /* ARSCNViewController.swift */,
 			);
 			path = ViewController;
@@ -537,10 +545,10 @@
 				EA05F10A21B6815C00D2C356 /* AutolayoutExtension.swift in Sources */,
 				EA00EB9821C7AF4900A30258 /* CGFloatExtension.swift in Sources */,
 				EA00EB9A21C7C63C00A30258 /* CGPointExtension.swift in Sources */,
-				EA61774221B026DA001F978B /* ViewController.swift in Sources */,
 				EA00EB9C21C7E67600A30258 /* Constants.swift in Sources */,
 				EA05F10821B67D0E00D2C356 /* ARSCNViewController.swift in Sources */,
 				EA61774021B026DA001F978B /* AppDelegate.swift in Sources */,
+				EA00EBA321C8FDF600A30258 /* Pointer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

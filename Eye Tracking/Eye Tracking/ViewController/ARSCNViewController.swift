@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import ARKit
 
-class ARSCNViewController: ViewController {
+class ARSCNViewController: UIViewController {
 
 	var sceneView: ARSCNView!
 	let configuration = ARFaceTrackingConfiguration()
@@ -58,7 +58,6 @@ class ARSCNViewController: ViewController {
 		let screenGeometry = SCNPlane(width: 1, height: 1)
 		screenGeometry.firstMaterial?.isDoubleSided = true
 		screenGeometry.firstMaterial?.fillMode = .fill
-		screenGeometry.firstMaterial?.diffuse.contents = UIColor.green.withAlphaComponent(0.5)
 
 		let node = SCNNode()
 		node.geometry = screenGeometry
@@ -78,7 +77,6 @@ class ARSCNViewController: ViewController {
 
 		setupARSCNView()
 		setupView()
-		//sceneView.scene.rootNode.addChildNode(nodeInFrontOfScreen)
 		sceneView.pointOfView?.addChildNode(nodeInFrontOfScreen)
 	}
 
@@ -94,7 +92,7 @@ class ARSCNViewController: ViewController {
 		sceneView.session.pause()
 	}
 
-	fileprivate func setupARSCNView() {
+	private func setupARSCNView() {
 		sceneView = ARSCNView()
 		sceneView.delegate = self
 		view.addSubview(sceneView)
@@ -132,7 +130,7 @@ class ARSCNViewController: ViewController {
 
 			let point: CGPoint = {
 				var point = CGPoint()
-				let pointX = ((leftEyeLocation.x + rightEyeLocation.x) / 2)
+				let pointX = ((leftEyeLocation.x + rightEyeLocation.x) / 2) + 250
 				let pointY = -(leftEyeLocation.y + rightEyeLocation.y) / 2
 
 				point.x = pointX.clamped(to: Constants.Ranges.widthRange)
@@ -144,18 +142,18 @@ class ARSCNViewController: ViewController {
 		}
 	}
 
-	fileprivate func setupView() {
+	private func setupView() {
 		view.addSubview(crosshair)
 		crosshair.center = view.center
 	}
 
-	fileprivate func setNewPoint(_ point: CGPoint) {
+	private func setNewPoint(_ point: CGPoint) {
 		points.append(point)
 		points = points.suffix(50).map {$0}
-
 		DispatchQueue.main.async {
 			UIView.animate(withDuration: 0.1, animations: {
-				self.crosshair.center = self.points.average()
+//				self.crosshair.center = self.points.average()
+				Pointer.shared.setPoint(to: self.points.average())
 			})
 		}
 	}

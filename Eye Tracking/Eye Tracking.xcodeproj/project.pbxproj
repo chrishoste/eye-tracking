@@ -1,0 +1,874 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1EE98FF735379EE481233B90 /* Pods_Eye_Tracking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED8012058B7DCBE73308645 /* Pods_Eye_Tracking.framework */; };
+		305CC4DAC02D57830501DBB0 /* Pods_Eye_TrackingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C038CB088E6BAF9DAAEABB36 /* Pods_Eye_TrackingTests.framework */; };
+		890D871101A86C087C7C093E /* Pods_Eye_TrackingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A2E0184BC09649696E8194 /* Pods_Eye_TrackingUITests.framework */; };
+		EA00EB9821C7AF4900A30258 /* CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00EB9721C7AF4900A30258 /* CGFloatExtension.swift */; };
+		EA00EB9A21C7C63C00A30258 /* CGPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00EB9921C7C63C00A30258 /* CGPointExtension.swift */; };
+		EA00EB9C21C7E67600A30258 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00EB9B21C7E67600A30258 /* Constants.swift */; };
+		EA00EBA021C7F0C800A30258 /* Crosshair.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00EB9F21C7F0C800A30258 /* Crosshair.swift */; };
+		EA05F10821B67D0E00D2C356 /* ARSCNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA05F10721B67D0E00D2C356 /* ARSCNViewController.swift */; };
+		EA05F10A21B6815C00D2C356 /* AutolayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA05F10921B6815C00D2C356 /* AutolayoutExtension.swift */; };
+		EA61774021B026DA001F978B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61773F21B026DA001F978B /* AppDelegate.swift */; };
+		EA61774221B026DA001F978B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61774121B026DA001F978B /* ViewController.swift */; };
+		EA61774721B026DC001F978B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA61774621B026DC001F978B /* Assets.xcassets */; };
+		EA61774A21B026DC001F978B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA61774821B026DC001F978B /* LaunchScreen.storyboard */; };
+		EA61775521B026DC001F978B /* Eye_TrackingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61775421B026DC001F978B /* Eye_TrackingTests.swift */; };
+		EA61776021B026DC001F978B /* Eye_TrackingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61775F21B026DC001F978B /* Eye_TrackingUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA61775121B026DC001F978B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA61773421B026DA001F978B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA61773B21B026DA001F978B;
+			remoteInfo = "Eye Tracking";
+		};
+		EA61775C21B026DC001F978B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA61773421B026DA001F978B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA61773B21B026DA001F978B;
+			remoteInfo = "Eye Tracking";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0ED8012058B7DCBE73308645 /* Pods_Eye_Tracking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eye_Tracking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E7959164EE009EAFCE1F62 /* Pods-Eye TrackingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eye TrackingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eye TrackingTests/Pods-Eye TrackingTests.release.xcconfig"; sourceTree = "<group>"; };
+		43A2E0184BC09649696E8194 /* Pods_Eye_TrackingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eye_TrackingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5125B06480B3C8D13A64FC0C /* Pods-Eye TrackingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eye TrackingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eye TrackingUITests/Pods-Eye TrackingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5AA01DA8923E26A5F797D003 /* Pods-Eye TrackingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eye TrackingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eye TrackingUITests/Pods-Eye TrackingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		671F80E290E5F230389242CA /* Pods-Eye Tracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eye Tracking.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eye Tracking/Pods-Eye Tracking.release.xcconfig"; sourceTree = "<group>"; };
+		C038CB088E6BAF9DAAEABB36 /* Pods_Eye_TrackingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eye_TrackingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA00EB9721C7AF4900A30258 /* CGFloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
+		EA00EB9921C7C63C00A30258 /* CGPointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtension.swift; sourceTree = "<group>"; };
+		EA00EB9B21C7E67600A30258 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EA00EB9F21C7F0C800A30258 /* Crosshair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crosshair.swift; sourceTree = "<group>"; };
+		EA05F10721B67D0E00D2C356 /* ARSCNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNViewController.swift; sourceTree = "<group>"; };
+		EA05F10921B6815C00D2C356 /* AutolayoutExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutExtension.swift; sourceTree = "<group>"; };
+		EA61773C21B026DA001F978B /* Eye Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eye Tracking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA61773F21B026DA001F978B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EA61774121B026DA001F978B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA61774621B026DC001F978B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA61774921B026DC001F978B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EA61774B21B026DC001F978B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA61775021B026DC001F978B /* Eye TrackingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eye TrackingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA61775421B026DC001F978B /* Eye_TrackingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eye_TrackingTests.swift; sourceTree = "<group>"; };
+		EA61775621B026DC001F978B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA61775B21B026DC001F978B /* Eye TrackingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eye TrackingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA61775F21B026DC001F978B /* Eye_TrackingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eye_TrackingUITests.swift; sourceTree = "<group>"; };
+		EA61776121B026DC001F978B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F49B495CF0EED30A6E6534D2 /* Pods-Eye Tracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eye Tracking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eye Tracking/Pods-Eye Tracking.debug.xcconfig"; sourceTree = "<group>"; };
+		F6585F8D19EB893AB1A1F0FA /* Pods-Eye TrackingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eye TrackingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eye TrackingTests/Pods-Eye TrackingTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA61773921B026DA001F978B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EE98FF735379EE481233B90 /* Pods_Eye_Tracking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA61774D21B026DC001F978B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				305CC4DAC02D57830501DBB0 /* Pods_Eye_TrackingTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA61775821B026DC001F978B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				890D871101A86C087C7C093E /* Pods_Eye_TrackingUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B4226ADE70E4A44070819B61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0ED8012058B7DCBE73308645 /* Pods_Eye_Tracking.framework */,
+				C038CB088E6BAF9DAAEABB36 /* Pods_Eye_TrackingTests.framework */,
+				43A2E0184BC09649696E8194 /* Pods_Eye_TrackingUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA00EB9D21C7F0AE00A30258 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA00EB9E21C7F0BA00A30258 /* Crosshair */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		EA00EB9E21C7F0BA00A30258 /* Crosshair */ = {
+			isa = PBXGroup;
+			children = (
+				EA00EB9F21C7F0C800A30258 /* Crosshair.swift */,
+			);
+			path = Crosshair;
+			sourceTree = "<group>";
+		};
+		EA61773321B026DA001F978B = {
+			isa = PBXGroup;
+			children = (
+				EA61773E21B026DA001F978B /* Eye Tracking */,
+				EA61775321B026DC001F978B /* Eye TrackingTests */,
+				EA61775E21B026DC001F978B /* Eye TrackingUITests */,
+				EA61773D21B026DA001F978B /* Products */,
+				EAF79FF2EA293902218BCCB8 /* Pods */,
+				B4226ADE70E4A44070819B61 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EA61773D21B026DA001F978B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA61773C21B026DA001F978B /* Eye Tracking.app */,
+				EA61775021B026DC001F978B /* Eye TrackingTests.xctest */,
+				EA61775B21B026DC001F978B /* Eye TrackingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA61773E21B026DA001F978B /* Eye Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				EA61774B21B026DC001F978B /* Info.plist */,
+				EA61773F21B026DA001F978B /* AppDelegate.swift */,
+				EA61776F21B0276E001F978B /* ViewController */,
+				EA61776D21B02744001F978B /* Storyboards */,
+				EA61777021B02788001F978B /* Helper */,
+				EA61776E21B0275C001F978B /* Ressources */,
+			);
+			path = "Eye Tracking";
+			sourceTree = "<group>";
+		};
+		EA61775321B026DC001F978B /* Eye TrackingTests */ = {
+			isa = PBXGroup;
+			children = (
+				EA61775421B026DC001F978B /* Eye_TrackingTests.swift */,
+				EA61775621B026DC001F978B /* Info.plist */,
+			);
+			path = "Eye TrackingTests";
+			sourceTree = "<group>";
+		};
+		EA61775E21B026DC001F978B /* Eye TrackingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EA61775F21B026DC001F978B /* Eye_TrackingUITests.swift */,
+				EA61776121B026DC001F978B /* Info.plist */,
+			);
+			path = "Eye TrackingUITests";
+			sourceTree = "<group>";
+		};
+		EA61776D21B02744001F978B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EA61774821B026DC001F978B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EA61776E21B0275C001F978B /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				EA61774621B026DC001F978B /* Assets.xcassets */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		EA61776F21B0276E001F978B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EA00EB9D21C7F0AE00A30258 /* Custom Views */,
+				EA61774121B026DA001F978B /* ViewController.swift */,
+				EA05F10721B67D0E00D2C356 /* ARSCNViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EA61777021B02788001F978B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EA05F10921B6815C00D2C356 /* AutolayoutExtension.swift */,
+				EA00EB9721C7AF4900A30258 /* CGFloatExtension.swift */,
+				EA00EB9921C7C63C00A30258 /* CGPointExtension.swift */,
+				EA00EB9B21C7E67600A30258 /* Constants.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		EAF79FF2EA293902218BCCB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F49B495CF0EED30A6E6534D2 /* Pods-Eye Tracking.debug.xcconfig */,
+				671F80E290E5F230389242CA /* Pods-Eye Tracking.release.xcconfig */,
+				F6585F8D19EB893AB1A1F0FA /* Pods-Eye TrackingTests.debug.xcconfig */,
+				25E7959164EE009EAFCE1F62 /* Pods-Eye TrackingTests.release.xcconfig */,
+				5AA01DA8923E26A5F797D003 /* Pods-Eye TrackingUITests.debug.xcconfig */,
+				5125B06480B3C8D13A64FC0C /* Pods-Eye TrackingUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA61773B21B026DA001F978B /* Eye Tracking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA61776421B026DC001F978B /* Build configuration list for PBXNativeTarget "Eye Tracking" */;
+			buildPhases = (
+				C2F6CD4269052F30AA659082 /* [CP] Check Pods Manifest.lock */,
+				EA61773821B026DA001F978B /* Sources */,
+				EA61773921B026DA001F978B /* Frameworks */,
+				EA61773A21B026DA001F978B /* Resources */,
+				9116F84907792C196ACC5A51 /* [CP] Embed Pods Frameworks */,
+				EBFD42F954AB330FBEA4E973 /* [CP] Copy Pods Resources */,
+				EA77F02421B02AA2000C122A /* SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Eye Tracking";
+			productName = "Eye Tracking";
+			productReference = EA61773C21B026DA001F978B /* Eye Tracking.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EA61774F21B026DC001F978B /* Eye TrackingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA61776721B026DC001F978B /* Build configuration list for PBXNativeTarget "Eye TrackingTests" */;
+			buildPhases = (
+				0373FB86B776253B0B9E50A7 /* [CP] Check Pods Manifest.lock */,
+				EA61774C21B026DC001F978B /* Sources */,
+				EA61774D21B026DC001F978B /* Frameworks */,
+				EA61774E21B026DC001F978B /* Resources */,
+				E00536E9780342C90EA49214 /* [CP] Embed Pods Frameworks */,
+				6B11A02EBF532F6294B7E403 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA61775221B026DC001F978B /* PBXTargetDependency */,
+			);
+			name = "Eye TrackingTests";
+			productName = "Eye TrackingTests";
+			productReference = EA61775021B026DC001F978B /* Eye TrackingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EA61775A21B026DC001F978B /* Eye TrackingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA61776A21B026DC001F978B /* Build configuration list for PBXNativeTarget "Eye TrackingUITests" */;
+			buildPhases = (
+				9DBEF371973F875A85D3CD04 /* [CP] Check Pods Manifest.lock */,
+				EA61775721B026DC001F978B /* Sources */,
+				EA61775821B026DC001F978B /* Frameworks */,
+				EA61775921B026DC001F978B /* Resources */,
+				6753E116094F9EC5A09290AE /* [CP] Embed Pods Frameworks */,
+				27A008117042FC7DF971A792 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA61775D21B026DC001F978B /* PBXTargetDependency */,
+			);
+			name = "Eye TrackingUITests";
+			productName = "Eye TrackingUITests";
+			productReference = EA61775B21B026DC001F978B /* Eye TrackingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA61773421B026DA001F978B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = hoste;
+				TargetAttributes = {
+					EA61773B21B026DA001F978B = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					EA61774F21B026DC001F978B = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = EA61773B21B026DA001F978B;
+					};
+					EA61775A21B026DC001F978B = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = EA61773B21B026DA001F978B;
+					};
+				};
+			};
+			buildConfigurationList = EA61773721B026DA001F978B /* Build configuration list for PBXProject "Eye Tracking" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA61773321B026DA001F978B;
+			productRefGroup = EA61773D21B026DA001F978B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA61773B21B026DA001F978B /* Eye Tracking */,
+				EA61774F21B026DC001F978B /* Eye TrackingTests */,
+				EA61775A21B026DC001F978B /* Eye TrackingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA61773A21B026DA001F978B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA61774A21B026DC001F978B /* LaunchScreen.storyboard in Resources */,
+				EA61774721B026DC001F978B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA61774E21B026DC001F978B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA61775921B026DC001F978B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0373FB86B776253B0B9E50A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Eye TrackingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27A008117042FC7DF971A792 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eye TrackingUITests/Pods-Eye TrackingUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6753E116094F9EC5A09290AE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eye TrackingUITests/Pods-Eye TrackingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B11A02EBF532F6294B7E403 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eye TrackingTests/Pods-Eye TrackingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9116F84907792C196ACC5A51 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eye Tracking/Pods-Eye Tracking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DBEF371973F875A85D3CD04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Eye TrackingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2F6CD4269052F30AA659082 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Eye Tracking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E00536E9780342C90EA49214 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eye TrackingTests/Pods-Eye TrackingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA77F02421B02AA2000C122A /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		EBFD42F954AB330FBEA4E973 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eye Tracking/Pods-Eye Tracking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA61773821B026DA001F978B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA00EBA021C7F0C800A30258 /* Crosshair.swift in Sources */,
+				EA05F10A21B6815C00D2C356 /* AutolayoutExtension.swift in Sources */,
+				EA00EB9821C7AF4900A30258 /* CGFloatExtension.swift in Sources */,
+				EA00EB9A21C7C63C00A30258 /* CGPointExtension.swift in Sources */,
+				EA61774221B026DA001F978B /* ViewController.swift in Sources */,
+				EA00EB9C21C7E67600A30258 /* Constants.swift in Sources */,
+				EA05F10821B67D0E00D2C356 /* ARSCNViewController.swift in Sources */,
+				EA61774021B026DA001F978B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA61774C21B026DC001F978B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA61775521B026DC001F978B /* Eye_TrackingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA61775721B026DC001F978B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA61776021B026DC001F978B /* Eye_TrackingUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA61775221B026DC001F978B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA61773B21B026DA001F978B /* Eye Tracking */;
+			targetProxy = EA61775121B026DC001F978B /* PBXContainerItemProxy */;
+		};
+		EA61775D21B026DC001F978B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA61773B21B026DA001F978B /* Eye Tracking */;
+			targetProxy = EA61775C21B026DC001F978B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EA61774821B026DC001F978B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA61774921B026DC001F978B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA61776221B026DC001F978B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EA61776321B026DC001F978B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA61776521B026DC001F978B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F49B495CF0EED30A6E6534D2 /* Pods-Eye Tracking.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CCCCMKZ642;
+				INFOPLIST_FILE = "Eye Tracking/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hoste.Eye-Tracking";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA61776621B026DC001F978B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 671F80E290E5F230389242CA /* Pods-Eye Tracking.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CCCCMKZ642;
+				INFOPLIST_FILE = "Eye Tracking/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hoste.Eye-Tracking";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EA61776821B026DC001F978B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6585F8D19EB893AB1A1F0FA /* Pods-Eye TrackingTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CCCCMKZ642;
+				INFOPLIST_FILE = "Eye TrackingTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hoste.Eye-TrackingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eye Tracking.app/Eye Tracking";
+			};
+			name = Debug;
+		};
+		EA61776921B026DC001F978B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25E7959164EE009EAFCE1F62 /* Pods-Eye TrackingTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CCCCMKZ642;
+				INFOPLIST_FILE = "Eye TrackingTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hoste.Eye-TrackingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eye Tracking.app/Eye Tracking";
+			};
+			name = Release;
+		};
+		EA61776B21B026DC001F978B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AA01DA8923E26A5F797D003 /* Pods-Eye TrackingUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CCCCMKZ642;
+				INFOPLIST_FILE = "Eye TrackingUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hoste.Eye-TrackingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Eye Tracking";
+			};
+			name = Debug;
+		};
+		EA61776C21B026DC001F978B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5125B06480B3C8D13A64FC0C /* Pods-Eye TrackingUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CCCCMKZ642;
+				INFOPLIST_FILE = "Eye TrackingUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hoste.Eye-TrackingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Eye Tracking";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA61773721B026DA001F978B /* Build configuration list for PBXProject "Eye Tracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA61776221B026DC001F978B /* Debug */,
+				EA61776321B026DC001F978B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA61776421B026DC001F978B /* Build configuration list for PBXNativeTarget "Eye Tracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA61776521B026DC001F978B /* Debug */,
+				EA61776621B026DC001F978B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA61776721B026DC001F978B /* Build configuration list for PBXNativeTarget "Eye TrackingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA61776821B026DC001F978B /* Debug */,
+				EA61776921B026DC001F978B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA61776A21B026DC001F978B /* Build configuration list for PBXNativeTarget "Eye TrackingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA61776B21B026DC001F978B /* Debug */,
+				EA61776C21B026DC001F978B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA61773421B026DA001F978B /* Project object */;
+}

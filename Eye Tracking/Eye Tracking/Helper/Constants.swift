@@ -24,4 +24,8 @@ struct Constants {
 	struct Colors {
 		static let crosshairColor: UIColor = .white
 	}
+
+	struct NotificationNames {
+		static let didUpdatePoint = Notification.Name(rawValue: "didUpdatePoint")
+	}
 }

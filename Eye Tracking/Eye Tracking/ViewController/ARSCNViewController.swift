@@ -76,8 +76,22 @@ class ARSCNViewController: UIViewController {
 		}
 
 		setupARSCNView()
-		setupView()
 		sceneView.pointOfView?.addChildNode(nodeInFrontOfScreen)
+		addApp()
+		setupView()
+	}
+
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+	}
+
+	fileprivate func addApp() {
+
+		let app = UINavigationController(rootViewController: TestViewController())
+		app.view.frame = view.frame
+		view.addSubview(app.view)
+		app.view.contraintToSuperView()
+		addChild(app)
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -89,7 +103,7 @@ class ARSCNViewController: UIViewController {
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
 
-		sceneView.session.pause()
+		//sceneView.session.pause()
 	}
 
 	private func setupARSCNView() {

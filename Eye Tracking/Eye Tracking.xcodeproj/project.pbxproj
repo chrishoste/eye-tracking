@@ -22,6 +22,8 @@
 		EA61774A21B026DC001F978B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA61774821B026DC001F978B /* LaunchScreen.storyboard */; };
 		EA61775521B026DC001F978B /* Eye_TrackingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61775421B026DC001F978B /* Eye_TrackingTests.swift */; };
 		EA61776021B026DC001F978B /* Eye_TrackingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61775F21B026DC001F978B /* Eye_TrackingUITests.swift */; };
+		EAF1E31021C93C67009A3944 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1E30F21C93C67009A3944 /* TestViewController.swift */; };
+		EAF1E31321C941E1009A3944 /* CustomSizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1E31221C941E1009A3944 /* CustomSizeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		EA61775B21B026DC001F978B /* Eye TrackingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eye TrackingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA61775F21B026DC001F978B /* Eye_TrackingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eye_TrackingUITests.swift; sourceTree = "<group>"; };
 		EA61776121B026DC001F978B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAF1E30F21C93C67009A3944 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		EAF1E31221C941E1009A3944 /* CustomSizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSizeButton.swift; sourceTree = "<group>"; };
 		F49B495CF0EED30A6E6534D2 /* Pods-Eye Tracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eye Tracking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eye Tracking/Pods-Eye Tracking.debug.xcconfig"; sourceTree = "<group>"; };
 		F6585F8D19EB893AB1A1F0FA /* Pods-Eye TrackingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eye TrackingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eye TrackingTests/Pods-Eye TrackingTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +116,7 @@
 		EA00EB9D21C7F0AE00A30258 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				EAF1E31121C941CC009A3944 /* Buttons */,
 				EA00EB9E21C7F0BA00A30258 /* Crosshair */,
 			);
 			path = "Custom Views";
@@ -208,6 +213,7 @@
 			children = (
 				EA00EB9D21C7F0AE00A30258 /* Custom Views */,
 				EA05F10721B67D0E00D2C356 /* ARSCNViewController.swift */,
+				EAF1E30F21C93C67009A3944 /* TestViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -221,6 +227,14 @@
 				EA00EB9B21C7E67600A30258 /* Constants.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		EAF1E31121C941CC009A3944 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				EAF1E31221C941E1009A3944 /* CustomSizeButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		EAF79FF2EA293902218BCCB8 /* Pods */ = {
@@ -546,8 +560,10 @@
 				EA00EB9821C7AF4900A30258 /* CGFloatExtension.swift in Sources */,
 				EA00EB9A21C7C63C00A30258 /* CGPointExtension.swift in Sources */,
 				EA00EB9C21C7E67600A30258 /* Constants.swift in Sources */,
+				EAF1E31321C941E1009A3944 /* CustomSizeButton.swift in Sources */,
 				EA05F10821B67D0E00D2C356 /* ARSCNViewController.swift in Sources */,
 				EA61774021B026DA001F978B /* AppDelegate.swift in Sources */,
+				EAF1E31021C93C67009A3944 /* TestViewController.swift in Sources */,
 				EA00EBA321C8FDF600A30258 /* Pointer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,6 +23,17 @@ extension UIView {
 		}
 	}
 
+	func contraintToSuperView(withConstant: CGFloat) {
+		self.translatesAutoresizingMaskIntoConstraints = false
+
+		if let superView = self.superview {
+			self.topAnchor.constraint(equalTo: superView.topAnchor, constant: withConstant).isActive = true
+			self.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: withConstant).isActive = true
+			self.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -withConstant).isActive = true
+			self.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -withConstant).isActive = true
+		}
+	}
+
 	func contraintToCenter() {
 		self.translatesAutoresizingMaskIntoConstraints = false
 

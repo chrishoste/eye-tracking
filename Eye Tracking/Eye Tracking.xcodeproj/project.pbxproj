@@ -25,6 +25,7 @@
 		EAF1E31021C93C67009A3944 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1E30F21C93C67009A3944 /* TestViewController.swift */; };
 		EAF1E31321C941E1009A3944 /* CustomSizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1E31221C941E1009A3944 /* CustomSizeButton.swift */; };
 		EAF1E31521CA4CE4009A3944 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1E31421CA4CE4009A3944 /* CalibrationViewController.swift */; };
+		EAF1E31821CA6ADF009A3944 /* CalibrationCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1E31721CA6ADF009A3944 /* CalibrationCircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		EAF1E30F21C93C67009A3944 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		EAF1E31221C941E1009A3944 /* CustomSizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSizeButton.swift; sourceTree = "<group>"; };
 		EAF1E31421CA4CE4009A3944 /* CalibrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationViewController.swift; sourceTree = "<group>"; };
+		EAF1E31721CA6ADF009A3944 /* CalibrationCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationCircleView.swift; sourceTree = "<group>"; };
 		F49B495CF0EED30A6E6534D2 /* Pods-Eye Tracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eye Tracking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eye Tracking/Pods-Eye Tracking.debug.xcconfig"; sourceTree = "<group>"; };
 		F6585F8D19EB893AB1A1F0FA /* Pods-Eye TrackingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eye TrackingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eye TrackingTests/Pods-Eye TrackingTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 		EA00EB9D21C7F0AE00A30258 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				EAF1E31621CA6ACC009A3944 /* Calibration */,
 				EAF1E31121C941CC009A3944 /* Buttons */,
 				EA00EB9E21C7F0BA00A30258 /* Crosshair */,
 			);
@@ -238,6 +241,14 @@
 				EAF1E31221C941E1009A3944 /* CustomSizeButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		EAF1E31621CA6ACC009A3944 /* Calibration */ = {
+			isa = PBXGroup;
+			children = (
+				EAF1E31721CA6ADF009A3944 /* CalibrationCircleView.swift */,
+			);
+			path = Calibration;
 			sourceTree = "<group>";
 		};
 		EAF79FF2EA293902218BCCB8 /* Pods */ = {
@@ -565,6 +576,7 @@
 				EAF1E31521CA4CE4009A3944 /* CalibrationViewController.swift in Sources */,
 				EA00EB9C21C7E67600A30258 /* Constants.swift in Sources */,
 				EAF1E31321C941E1009A3944 /* CustomSizeButton.swift in Sources */,
+				EAF1E31821CA6ADF009A3944 /* CalibrationCircleView.swift in Sources */,
 				EA05F10821B67D0E00D2C356 /* ARSCNViewController.swift in Sources */,
 				EA61774021B026DA001F978B /* AppDelegate.swift in Sources */,
 				EAF1E31021C93C67009A3944 /* TestViewController.swift in Sources */,
@@ -739,7 +751,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CCCCMKZ642;
 				INFOPLIST_FILE = "Eye Tracking/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -759,7 +771,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CCCCMKZ642;
 				INFOPLIST_FILE = "Eye Tracking/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

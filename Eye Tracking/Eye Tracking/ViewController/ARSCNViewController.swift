@@ -165,7 +165,8 @@ class ARSCNViewController: UIViewController {
 
 	fileprivate func addApp() {
 
-		let app = UINavigationController(rootViewController: TestViewController())
+		//let app = UINavigationController(rootViewController: TestViewController())
+		let app = CalibrationViewController()
 		appView.addSubview(app.view)
 		app.view.contraintToSuperView()
 		addChild(app)

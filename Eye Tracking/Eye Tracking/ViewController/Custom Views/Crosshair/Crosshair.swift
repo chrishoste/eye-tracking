@@ -11,13 +11,13 @@ import UIKit
 
 class Crosshair: UIView {
 
-	private let crossRectOne: UIView = {
+	private let verticalCross: UIView = {
 		let view = UIView()
 		view.backgroundColor = Constants.Colors.crosshairColor
 		return view
 	}()
 
-	private let crossRectTwo: UIView = {
+	private let horizontalCross: UIView = {
 		let view = UIView()
 		view.backgroundColor = Constants.Colors.crosshairColor
 		return view
@@ -25,39 +25,47 @@ class Crosshair: UIView {
 
 	init(size: CGSize) {
 		super.init(frame: .zero)
+
+		setupView(size)
+		setupSubviews()
+		setupNotification()
+	}
+
+	private func setupView(_ size: CGSize) {
 		frame.size = size
 		layer.cornerRadius = frame.width / 2
 		backgroundColor = UIColor.init(white: 0, alpha: 0.2)
-
-		setupViews()
-		setupDelegates()
 	}
 
-	private func setupViews() {
+	private func setupSubviews() {
+		addSubview(verticalCross)
+		addSubview(horizontalCross)
 
-		addSubview(crossRectOne)
-		addSubview(crossRectTwo)
+		verticalCross.contraintToCenter()
+		verticalCross.constraintToConstants(top: 5, bottom: 5)
+		verticalCross.contraintSize(width: frame.width/12)
 
-		crossRectOne.contraintToCenter()
-		crossRectOne.constraintToConstants(top: 5, bottom: 5)
-		crossRectOne.contraintSize(width: frame.width/12)
-
-		crossRectTwo.contraintToCenter()
-		crossRectTwo.constraintToConstants(leading: 5, trailing: 5)
-		crossRectTwo.contraintSize(height: frame.width/12)
+		horizontalCross.contraintToCenter()
+		horizontalCross.constraintToConstants(leading: 5, trailing: 5)
+		horizontalCross.contraintSize(height: frame.width/12)
 	}
 
-	private func setupDelegates() {
-		Pointer.shared.delegate = self
+	private func setupNotification() {
+		NotificationCenter.default.addObserver(self, selector: #selector(didUpdatePointer(notification:)),
+											   name: Constants.NotificationNames.didUpdatePoint, object: nil)
+	}
+
+	@objc private func didUpdatePointer(notification: Notification) {
+		if let point = notification.object as? CGPoint {
+			center = point
+		}
 	}
 
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-}
 
-extension Crosshair: PointerDelegate {
-	func didUpdatePointer(point: CGPoint) {
-		center = point
+	deinit {
+		NotificationCenter.default.removeObserver(self)
 	}
 }

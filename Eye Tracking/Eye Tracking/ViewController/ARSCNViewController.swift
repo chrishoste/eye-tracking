@@ -65,8 +65,7 @@ class ARSCNViewController: UIViewController {
 	}()
 
 	let crosshair = Crosshair(size: .init(width: 50, height: 50))
-
-	var points: [CGPoint] = []
+	let appView = UIView()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -83,15 +82,6 @@ class ARSCNViewController: UIViewController {
 
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
-	}
-
-	fileprivate func addApp() {
-
-		let app = UINavigationController(rootViewController: TestViewController())
-		app.view.frame = view.frame
-		view.addSubview(app.view)
-		app.view.contraintToSuperView()
-		addChild(app)
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -152,7 +142,7 @@ class ARSCNViewController: UIViewController {
 				return point
 			}()
 
-			setNewPoint(point)
+			Pointer.shared.setNewPoint(point)
 		}
 	}
 
@@ -167,19 +157,18 @@ class ARSCNViewController: UIViewController {
 	}
 
 	private func setupView() {
+		view.addSubview(appView)
 		view.addSubview(crosshair)
-		crosshair.center = view.center
+
+		appView.contraintToSuperView()
 	}
 
-	private func setNewPoint(_ point: CGPoint) {
-		points.append(point)
-		points = points.suffix(50).map {$0}
-		DispatchQueue.main.async {
-			UIView.animate(withDuration: 0.1, animations: {
-//				self.crosshair.center = self.points.average()
-				Pointer.shared.setPoint(to: self.points.average())
-			})
-		}
+	fileprivate func addApp() {
+
+		let app = UINavigationController(rootViewController: TestViewController())
+		appView.addSubview(app.view)
+		app.view.contraintToSuperView()
+		addChild(app)
 	}
 }
 

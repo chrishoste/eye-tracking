@@ -35,6 +35,10 @@ class TestViewController: UIViewController {
 											   name: Constants.NotificationNames.didUpdatePoint, object: nil)
 	}
 
+	deinit {
+		NotificationCenter.default.removeObserver(self)
+	}
+
 	@objc func didUpdatePointer(notification: Notification) {
 		if let point = notification.object as? CGPoint {
 

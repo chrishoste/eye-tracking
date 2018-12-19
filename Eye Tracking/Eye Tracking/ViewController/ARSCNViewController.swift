@@ -156,6 +156,16 @@ class ARSCNViewController: UIViewController {
 		}
 	}
 
+	func checkForEnter(faceAnchor: ARFaceAnchor) {
+		guard let mouthPucker = faceAnchor.blendShapes[.mouthPucker] else {
+			return
+		}
+
+		if mouthPucker.floatValue > 0.5 {
+			debugPrint(mouthPucker)
+		}
+	}
+
 	private func setupView() {
 		view.addSubview(crosshair)
 		crosshair.center = view.center
@@ -205,5 +215,6 @@ extension ARSCNViewController: ARSCNViewDelegate {
 
 		faceGeometry.update(from: faceAnchor.geometry)
 		hitTest()
+		checkForEnter(faceAnchor: faceAnchor)
 	}
 }

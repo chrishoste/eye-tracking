@@ -21,7 +21,7 @@ class CalibrationCircleView: UIView {
 
 	let innerSmallCircle: UIView = {
 		let view = UIView()
-		view.backgroundColor = .red
+		view.backgroundColor = Constants.Colors.calibrationDotRed
 		return view
 	}()
 
@@ -32,7 +32,7 @@ class CalibrationCircleView: UIView {
 	}
 
 	private func setupView() {
-		backgroundColor = .red
+		backgroundColor = Constants.Colors.calibrationDotRed
 	}
 
 	override func didMoveToSuperview() {
@@ -58,8 +58,8 @@ class CalibrationCircleView: UIView {
 
 	func setCircleGreen() {
 		notification.prepare()
-		backgroundColor = .green
-		innerSmallCircle.backgroundColor = .green
+		backgroundColor = Constants.Colors.calibrationDotGreen
+		innerSmallCircle.backgroundColor = Constants.Colors.calibrationDotGreen
 
 		notification.notificationOccurred(.success)
 	}

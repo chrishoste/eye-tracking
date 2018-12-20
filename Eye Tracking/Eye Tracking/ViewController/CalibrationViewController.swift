@@ -11,7 +11,7 @@ import UIKit
 
 class CalibrationViewController: UIViewController {
 
-	var seconds = 5
+	var seconds = 1
 	var timer: Timer?
 
 	let calibrationPointView = CalibrationCircleView()
@@ -84,7 +84,14 @@ class CalibrationViewController: UIViewController {
 			self.calibrationPointView.alpha = 1
 
 		}) { (_) in
-			self.calibrationPointView.setCircleGreen()
+			DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // change 2 to desired number of seconds
+				let watchPoint = Pointer.shared.getPointer()
+				self.calibrate(watchPoint: watchPoint, centerPoint: self.calibrationPointView.center)
+			}
+			//self.calibrationPointView.setCircleGreen()
+
+//			self.view.removeFromSuperview()
+//			self.removeFromParent()
 		}
 	}
 
@@ -104,5 +111,33 @@ class CalibrationViewController: UIViewController {
 			stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 			stackView.bottomAnchor.constraint(equalTo: calibrationPointView.topAnchor)
 			])
+	}
+
+	func calibrate(watchPoint: CGPoint, centerPoint: CGPoint) {
+
+		Pointer.shared.calibrate(centerPoint: centerPoint)
+
+//		if checkPoint(watchPoint: watchPoint, centerPoint: centerPoint) {
+//			calibrationPointView.setCircleGreen()
+//			return
+//		}
+//
+//		let calibartedCompenstation = CGPoint(x: centerPoint.x - watchPoint.x, y: centerPoint.y - watchPoint.y)
+//		Pointer.shared.setNewPoint(calibartedCompenstation)
+//		Pointer.shared.resetPoints()
+//
+//		//calibrate(watchPoint: Pointer.shared.getPointer(), centerPoint: centerPoint)
+	}
+
+	func checkPoint(watchPoint: CGPoint, centerPoint: CGPoint) -> Bool {
+
+		let rangeX = (centerPoint.x - 20...centerPoint.x + 20)
+		let rangeY = (centerPoint.y - 20...centerPoint.y + 20)
+
+		if rangeX.contains(watchPoint.x) && rangeY.contains(watchPoint.y) {
+			return true
+		} else {
+			return false
+		}
 	}
 }

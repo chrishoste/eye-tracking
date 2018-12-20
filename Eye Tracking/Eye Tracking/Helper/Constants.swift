@@ -23,6 +23,8 @@ struct Constants {
 
 	struct Colors {
 		static let crosshairColor: UIColor = .white
+		static let calibrationDotGreen: UIColor = .init(hexString: "2ecc71")
+		static let calibrationDotRed: UIColor = .init(hexString: "c0392b")
 	}
 
 	struct NotificationNames {

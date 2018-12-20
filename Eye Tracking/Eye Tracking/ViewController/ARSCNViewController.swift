@@ -65,7 +65,11 @@ class ARSCNViewController: UIViewController {
 	}()
 
 	let crosshair = Crosshair(size: .init(width: 50, height: 50))
-	let appView = UIView()
+	let appView: UIView = {
+		let view = UIView()
+		view.backgroundColor = .white
+		return view
+	}()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -75,9 +79,8 @@ class ARSCNViewController: UIViewController {
 		}
 
 		setupARSCNView()
-		sceneView.pointOfView?.addChildNode(nodeInFrontOfScreen)
-		addApp()
 		setupView()
+		addApp()
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -101,6 +104,7 @@ class ARSCNViewController: UIViewController {
 		sceneView.delegate = self
 		view.addSubview(sceneView)
 		sceneView.contraintARSCNToSuperView()
+		sceneView.pointOfView?.addChildNode(nodeInFrontOfScreen)
 	}
 
 	func hitTest() {
@@ -134,8 +138,8 @@ class ARSCNViewController: UIViewController {
 
 			let point: CGPoint = {
 				var point = CGPoint()
-				let pointX = ((leftEyeLocation.x + rightEyeLocation.x) / 2) + 250
-				let pointY = -(leftEyeLocation.y + rightEyeLocation.y) / 2
+				let pointX = ((leftEyeLocation.x + rightEyeLocation.x) / 2) + Pointer.shared.getCompensation(compensation: .WIDTH)
+				let pointY = (-(leftEyeLocation.y + rightEyeLocation.y) / 2) + Pointer.shared.getCompensation(compensation: .HEIGHT)
 
 				point.x = pointX.clamped(to: Constants.Ranges.widthRange)
 				point.y = pointY.clamped(to: Constants.Ranges.heightRange)

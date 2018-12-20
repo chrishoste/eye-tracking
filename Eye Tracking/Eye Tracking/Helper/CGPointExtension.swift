@@ -18,6 +18,14 @@ extension CGPoint {
 		let denominator = CGFloat(by)
 		return CGPoint(x: self.x / denominator, y: self.y / denominator)
 	}
+
+	private func CGPointDistanceSquared(to: CGPoint) -> CGFloat {
+		return (self.x - to.x) * (self.x - to.x) + (self.y - to.y) * (self.y - to.y)
+	}
+
+	func distance(to: CGPoint) -> CGFloat {
+		return sqrt(self.CGPointDistanceSquared(to: to))
+	}
 }
 
 extension Collection where Element == CGPoint {

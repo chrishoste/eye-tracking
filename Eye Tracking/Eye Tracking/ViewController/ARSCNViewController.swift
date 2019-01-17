@@ -155,7 +155,7 @@ class ARSCNViewController: UIViewController {
 			return
 		}
 
-		if mouthPucker.floatValue > 0.5 {
+		if mouthPucker.floatValue > 0.43 {
 			debugPrint(mouthPucker)
 		}
 	}
@@ -170,7 +170,8 @@ class ARSCNViewController: UIViewController {
 	fileprivate func addApp() {
 
 		//let app = UINavigationController(rootViewController: TestViewController())
-		let app = CalibrationViewController()
+		//let app = CalibrationViewController()
+		let app = CustomTabbarController()
 		appView.addSubview(app.view)
 		app.view.contraintToSuperView()
 		addChild(app)

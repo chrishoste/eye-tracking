@@ -75,6 +75,33 @@ extension UIView {
 		}
 	}
 
+	func constraintToConstantsAndSafeArea(top: CGFloat? = nil, leading: CGFloat? = nil,
+							   trailing: CGFloat? = nil, bottom: CGFloat? = nil) {
+		self.translatesAutoresizingMaskIntoConstraints = false
+
+		if let superView = self.superview {
+			if let topConstant = top {
+				self.topAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.topAnchor,
+										  constant: topConstant).isActive = true
+			}
+
+			if let leadingConstant = leading {
+				self.leadingAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.leadingAnchor,
+											  constant: leadingConstant).isActive = true
+			}
+
+			if let trailingConstant = trailing {
+				self.trailingAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.trailingAnchor,
+											   constant: -trailingConstant).isActive = true
+			}
+
+			if let bottomConstant = bottom {
+				self.bottomAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.bottomAnchor,
+											 constant: -bottomConstant).isActive = true
+			}
+		}
+	}
+
 	func contraintSize(width: CGFloat? = nil, height: CGFloat? = nil) {
 		self.translatesAutoresizingMaskIntoConstraints = false
 

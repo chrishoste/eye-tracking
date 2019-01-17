@@ -11,7 +11,7 @@ import UIKit
 
 class CalibrationViewController: UIViewController {
 
-	var seconds = 1
+	var seconds = 5
 	var timer: Timer?
 
 	let calibrationPointView = CalibrationCircleView()

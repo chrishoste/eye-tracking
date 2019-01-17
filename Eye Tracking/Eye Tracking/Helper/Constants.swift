@@ -25,6 +25,7 @@ struct Constants {
 		static let crosshairColor: UIColor = .white
 		static let calibrationDotGreen: UIColor = .init(hexString: "2ecc71")
 		static let calibrationDotRed: UIColor = .init(hexString: "c0392b")
+		static let tabbarBackground: UIColor = .init(hexString: "ecf0f1")
 	}
 
 	struct NotificationNames {

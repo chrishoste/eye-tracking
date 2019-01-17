@@ -17,6 +17,9 @@
 		EA00EBA321C8FDF600A30258 /* Pointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00EBA221C8FDF600A30258 /* Pointer.swift */; };
 		EA05F10821B67D0E00D2C356 /* ARSCNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA05F10721B67D0E00D2C356 /* ARSCNViewController.swift */; };
 		EA05F10A21B6815C00D2C356 /* AutolayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA05F10921B6815C00D2C356 /* AutolayoutExtension.swift */; };
+		EA238EDF21F06E720085E1A3 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA238EDE21F06E720085E1A3 /* UIButtonExtension.swift */; };
+		EA238EE121F077820085E1A3 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA238EE021F077820085E1A3 /* Buttons.swift */; };
+		EA238EE421F0B0830085E1A3 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA238EE321F0B0830085E1A3 /* NavigationBar.swift */; };
 		EA28DB0B21EF5B3500A41E29 /* CustomTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28DB0A21EF5B3500A41E29 /* CustomTabbarController.swift */; };
 		EA28DB0E21EF5C0A00A41E29 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28DB0D21EF5C0A00A41E29 /* CustomTabbar.swift */; };
 		EA61774021B026DA001F978B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61773F21B026DA001F978B /* AppDelegate.swift */; };
@@ -63,6 +66,9 @@
 		EA00EBA221C8FDF600A30258 /* Pointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Pointer.swift; path = ../../../../../../Documents/Pointer.swift; sourceTree = "<group>"; };
 		EA05F10721B67D0E00D2C356 /* ARSCNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNViewController.swift; sourceTree = "<group>"; };
 		EA05F10921B6815C00D2C356 /* AutolayoutExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutExtension.swift; sourceTree = "<group>"; };
+		EA238EDE21F06E720085E1A3 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		EA238EE021F077820085E1A3 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		EA238EE321F0B0830085E1A3 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		EA28DB0A21EF5B3500A41E29 /* CustomTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarController.swift; sourceTree = "<group>"; };
 		EA28DB0D21EF5C0A00A41E29 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 		EA61773C21B026DA001F978B /* Eye Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eye Tracking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +132,7 @@
 		EA00EB9D21C7F0AE00A30258 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				EA238EE221F0B06D0085E1A3 /* NavigationBar */,
 				EA28DB0C21EF5BF500A41E29 /* Tabbar */,
 				EAF1E31621CA6ACC009A3944 /* Calibration */,
 				EAF1E31121C941CC009A3944 /* Buttons */,
@@ -146,8 +153,17 @@
 			isa = PBXGroup;
 			children = (
 				EA00EBA221C8FDF600A30258 /* Pointer.swift */,
+				EA238EE021F077820085E1A3 /* Buttons.swift */,
 			);
 			path = Singelton;
+			sourceTree = "<group>";
+		};
+		EA238EE221F0B06D0085E1A3 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				EA238EE321F0B0830085E1A3 /* NavigationBar.swift */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		EA28DB0921EF5B1B00A41E29 /* Tabbar Controller */ = {
@@ -256,6 +272,7 @@
 				EA00EB9921C7C63C00A30258 /* CGPointExtension.swift */,
 				EA00EB9B21C7E67600A30258 /* Constants.swift */,
 				EAF1E31B21CAAABC009A3944 /* UIColorExtension.swift */,
+				EA238EDE21F06E720085E1A3 /* UIButtonExtension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -599,10 +616,13 @@
 				EA00EB9821C7AF4900A30258 /* CGFloatExtension.swift in Sources */,
 				EA00EB9A21C7C63C00A30258 /* CGPointExtension.swift in Sources */,
 				EA28DB0B21EF5B3500A41E29 /* CustomTabbarController.swift in Sources */,
+				EA238EE421F0B0830085E1A3 /* NavigationBar.swift in Sources */,
 				EAF1E31521CA4CE4009A3944 /* CalibrationViewController.swift in Sources */,
+				EA238EE121F077820085E1A3 /* Buttons.swift in Sources */,
 				EA28DB0E21EF5C0A00A41E29 /* CustomTabbar.swift in Sources */,
 				EA00EB9C21C7E67600A30258 /* Constants.swift in Sources */,
 				EAF1E31C21CAAABC009A3944 /* UIColorExtension.swift in Sources */,
+				EA238EDF21F06E720085E1A3 /* UIButtonExtension.swift in Sources */,
 				EAF1E31321C941E1009A3944 /* CustomSizeButton.swift in Sources */,
 				EAF1E31821CA6ADF009A3944 /* CalibrationCircleView.swift in Sources */,
 				EA05F10821B67D0E00D2C356 /* ARSCNViewController.swift in Sources */,

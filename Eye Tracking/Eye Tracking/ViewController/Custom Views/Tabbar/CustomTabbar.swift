@@ -29,9 +29,15 @@ class TabbarItem: UIView {
 		return image
 	}()
 
+	let button: UIButton = {
+		let button = UIButton()
+		return button
+	}()
+
 	init(item: Item) {
 		super.init(frame: .zero)
 
+		Buttons.shared.append(button: button)
 		setupStackView(item)
 	}
 
@@ -41,7 +47,9 @@ class TabbarItem: UIView {
 		let stackView = UIStackView(arrangedSubviews: [icon, label])
 		stackView.axis = .vertical
 		addSubview(stackView)
-		stackView.constraintToConstants(top: 0, leading: 0, trailing: 0, bottom: 0)
+		addSubview(button)
+		stackView.constraintToConstants(top: 4, leading: 0, trailing: 0, bottom: 4)
+		button.constraintToConstants(top: 0, leading: 0, trailing: 0, bottom: 0)
 	}
 
 	required init?(coder aDecoder: NSCoder) {
@@ -66,14 +74,20 @@ class CustomTabbar: UIView {
 		let stackView = UIStackView()
 
 		for item in items {
-			stackView.addArrangedSubview(TabbarItem(item: item))
+			let tabBarItem = TabbarItem(item: item)
+			tabBarItem.button.addTarget(self, action: #selector(doAction), for: .touchUpInside)
+			stackView.addArrangedSubview(tabBarItem)
 		}
 
 		stackView.distribution = .fillEqually
 		stackView.isLayoutMarginsRelativeArrangement = true
-		stackView.layoutMargins = .init(top: 8, left: 0, bottom: 8, right: 0)
+		stackView.layoutMargins = .init(top: 4, left: 0, bottom: 4, right: 0)
 		addSubview(stackView)
 		stackView.constraintToConstants(top: 0, leading: 0, trailing: 0, bottom: 0)
+	}
+
+	@objc func doAction(sender: UIButton!) {
+		debugPrint("test button")
 	}
 
 	required init?(coder aDecoder: NSCoder) {

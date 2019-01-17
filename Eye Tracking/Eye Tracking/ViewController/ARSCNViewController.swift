@@ -155,8 +155,10 @@ class ARSCNViewController: UIViewController {
 			return
 		}
 
-		if mouthPucker.floatValue > 0.43 {
-			debugPrint(mouthPucker)
+		if mouthPucker.floatValue > 0.47 {
+			DispatchQueue.main.async {
+				Buttons.shared.sendAction()
+			}
 		}
 	}
 

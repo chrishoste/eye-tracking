@@ -31,4 +31,8 @@ struct Constants {
 	struct NotificationNames {
 		static let didUpdatePoint = Notification.Name(rawValue: "didUpdatePoint")
 	}
+
+	struct SlideMenu {
+		static let menuWidth: CGFloat = 270
+	}
 }

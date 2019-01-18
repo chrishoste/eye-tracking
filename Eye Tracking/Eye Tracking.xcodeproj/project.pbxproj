@@ -27,6 +27,8 @@
 		EA61774A21B026DC001F978B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA61774821B026DC001F978B /* LaunchScreen.storyboard */; };
 		EA61775521B026DC001F978B /* Eye_TrackingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61775421B026DC001F978B /* Eye_TrackingTests.swift */; };
 		EA61776021B026DC001F978B /* Eye_TrackingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61775F21B026DC001F978B /* Eye_TrackingUITests.swift */; };
+		EA6DBA6C21F1C31A00F01EDB /* BaseSlideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6DBA6B21F1C31A00F01EDB /* BaseSlideController.swift */; };
+		EACDEB1021F106CF00BB381A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EACDEB1221F106CF00BB381A /* Localizable.strings */; };
 		EAF1E31021C93C67009A3944 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1E30F21C93C67009A3944 /* TestViewController.swift */; };
 		EAF1E31321C941E1009A3944 /* CustomSizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1E31221C941E1009A3944 /* CustomSizeButton.swift */; };
 		EAF1E31521CA4CE4009A3944 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1E31421CA4CE4009A3944 /* CalibrationViewController.swift */; };
@@ -75,13 +77,16 @@
 		EA61773F21B026DA001F978B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA61774621B026DC001F978B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA61774921B026DC001F978B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EA61774B21B026DC001F978B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA61775021B026DC001F978B /* Eye TrackingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eye TrackingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA61775421B026DC001F978B /* Eye_TrackingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eye_TrackingTests.swift; sourceTree = "<group>"; };
 		EA61775621B026DC001F978B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA61775B21B026DC001F978B /* Eye TrackingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eye TrackingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA61775F21B026DC001F978B /* Eye_TrackingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eye_TrackingUITests.swift; sourceTree = "<group>"; };
 		EA61776121B026DC001F978B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA6DBA6B21F1C31A00F01EDB /* BaseSlideController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSlideController.swift; sourceTree = "<group>"; };
+		EACDEAFF21F1052B00BB381A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
+		EACDEB1121F106CF00BB381A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EACDEB1321F106DA00BB381A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EAF1E30F21C93C67009A3944 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		EAF1E31221C941E1009A3944 /* CustomSizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSizeButton.swift; sourceTree = "<group>"; };
 		EAF1E31421CA4CE4009A3944 /* CalibrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationViewController.swift; sourceTree = "<group>"; };
@@ -207,7 +212,7 @@
 		EA61773E21B026DA001F978B /* Eye Tracking */ = {
 			isa = PBXGroup;
 			children = (
-				EA61774B21B026DC001F978B /* Info.plist */,
+				EACDEB0021F1052B00BB381A /* Info.plist */,
 				EA61773F21B026DA001F978B /* AppDelegate.swift */,
 				EA00EBA121C8FDDE00A30258 /* Singelton */,
 				EA61776F21B0276E001F978B /* ViewController */,
@@ -248,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				EA61774621B026DC001F978B /* Assets.xcassets */,
+				EACDEB1221F106CF00BB381A /* Localizable.strings */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 		EA61776F21B0276E001F978B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EA6DBA6A21F1C30400F01EDB /* SlideMenu */,
 				EA28DB0921EF5B1B00A41E29 /* Tabbar Controller */,
 				EA00EB9D21C7F0AE00A30258 /* Custom Views */,
 				EA05F10721B67D0E00D2C356 /* ARSCNViewController.swift */,
@@ -275,6 +282,14 @@
 				EA238EDE21F06E720085E1A3 /* UIButtonExtension.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		EA6DBA6A21F1C30400F01EDB /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				EA6DBA6B21F1C31A00F01EDB /* BaseSlideController.swift */,
+			);
+			path = SlideMenu;
 			sourceTree = "<group>";
 		};
 		EAF1E31121C941CC009A3944 /* Buttons */ = {
@@ -402,6 +417,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = EA61773321B026DA001F978B;
 			productRefGroup = EA61773D21B026DA001F978B /* Products */;
@@ -421,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA61774A21B026DC001F978B /* LaunchScreen.storyboard in Resources */,
+				EACDEB1021F106CF00BB381A /* Localizable.strings in Resources */,
 				EA61774721B026DC001F978B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,6 +630,7 @@
 			files = (
 				EA00EBA021C7F0C800A30258 /* Crosshair.swift in Sources */,
 				EA05F10A21B6815C00D2C356 /* AutolayoutExtension.swift in Sources */,
+				EA6DBA6C21F1C31A00F01EDB /* BaseSlideController.swift in Sources */,
 				EA00EB9821C7AF4900A30258 /* CGFloatExtension.swift in Sources */,
 				EA00EB9A21C7C63C00A30258 /* CGPointExtension.swift in Sources */,
 				EA28DB0B21EF5B3500A41E29 /* CustomTabbarController.swift in Sources */,
@@ -672,6 +690,23 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		EACDEB0021F1052B00BB381A /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EACDEAFF21F1052B00BB381A /* Base */,
+			);
+			name = Info.plist;
+			sourceTree = "<group>";
+		};
+		EACDEB1221F106CF00BB381A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EACDEB1121F106CF00BB381A /* en */,
+				EACDEB1321F106DA00BB381A /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -679,6 +714,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -740,6 +776,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

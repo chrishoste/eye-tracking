@@ -15,6 +15,8 @@ class ARSCNViewController: UIViewController {
 	var sceneView: ARSCNView!
 	let configuration = ARFaceTrackingConfiguration()
 
+	var enterEnabled = true
+
 	var leftEyeNode: SCNNode = {
 		let geometry = SCNCone(topRadius: 0.005, bottomRadius: 0, height: 0.1)
 		geometry.radialSegmentCount = 3
@@ -155,9 +157,18 @@ class ARSCNViewController: UIViewController {
 			return
 		}
 
-		if mouthPucker.floatValue > 0.47 {
-			DispatchQueue.main.async {
-				Buttons.shared.sendAction()
+		if enterEnabled {
+			if mouthPucker.floatValue > 0.47 {
+				DispatchQueue.main.async {
+					self.enterEnabled = false
+					debugPrint("disabled")
+					Buttons.shared.sendAction()
+				}
+			}
+		} else {
+			if mouthPucker.floatValue < 0.44 {
+				debugPrint("enabled")
+				self.enterEnabled = true
 			}
 		}
 	}
@@ -173,7 +184,8 @@ class ARSCNViewController: UIViewController {
 
 		//let app = UINavigationController(rootViewController: TestViewController())
 		//let app = CalibrationViewController()
-		let app = CustomTabbarController()
+		//let app = CustomTabbarController()
+		let app = BaseSlideController()
 		appView.addSubview(app.view)
 		app.view.contraintToSuperView()
 		addChild(app)

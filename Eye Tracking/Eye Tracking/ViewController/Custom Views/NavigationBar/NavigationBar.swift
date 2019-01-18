@@ -9,7 +9,13 @@
 import Foundation
 import UIKit
 
+protocol NavigationBarDelegate: class {
+	func toggleMenu()
+}
+
 class NavigationBar: UIView {
+
+	weak var delegate: NavigationBarDelegate?
 
 	private let title: UILabel = {
 		let label = UILabel()
@@ -31,6 +37,7 @@ class NavigationBar: UIView {
 		button.setImage(#imageLiteral(resourceName: "Menu"), for: .normal)
 		button.tintColor = .black
 		button.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 30)
+		button.addTarget(self, action: #selector(NavigationBar.doMenu), for: .touchUpInside)
 		return button
 	}()
 
@@ -56,5 +63,9 @@ class NavigationBar: UIView {
 
 	func setTitle(title: String) {
 		self.title.text = title
+	}
+
+	@objc func doMenu(sender: UIButton!) {
+		delegate?.toggleMenu()
 	}
 }

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 struct Item {
+	let id: Int
 	let icon: UIImage
 	let title: String
 }
@@ -57,7 +58,13 @@ class TabbarItem: UIView {
 	}
 }
 
+protocol CustomTabbarDelegate: class {
+	func sendTabbarAction(key: Int)
+}
+
 class CustomTabbar: UIView {
+
+	weak var delegate: CustomTabbarDelegate?
 
 	private var items: [Item] = []
 
@@ -75,6 +82,7 @@ class CustomTabbar: UIView {
 
 		for item in items {
 			let tabBarItem = TabbarItem(item: item)
+			tabBarItem.button.tag = item.id
 			tabBarItem.button.addTarget(self, action: #selector(doAction), for: .touchUpInside)
 			stackView.addArrangedSubview(tabBarItem)
 		}
@@ -87,7 +95,7 @@ class CustomTabbar: UIView {
 	}
 
 	@objc func doAction(sender: UIButton!) {
-		debugPrint("test button")
+		delegate?.sendTabbarAction(key: sender!.tag)
 	}
 
 	required init?(coder aDecoder: NSCoder) {

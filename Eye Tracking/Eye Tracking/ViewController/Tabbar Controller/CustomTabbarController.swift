@@ -9,11 +9,19 @@
 import Foundation
 import UIKit
 
+protocol CustomTabbarControllerDelegate: class {
+	func toggleMenu()
+}
+
 class CustomTabbarController: UIViewController {
 
-	let tabbarItems = [Item(icon: #imageLiteral(resourceName: "Home"), title: "Home"),
-					   Item(icon: #imageLiteral(resourceName: "Home"), title: "Neues"),
-					   Item(icon: #imageLiteral(resourceName: "Home"), title: "Einstellungen")]
+	weak var delegate: CustomTabbarControllerDelegate?
+
+	let tabbarItems = [Item(id: 1, icon: #imageLiteral(resourceName: "Home"), title: "Home"),
+					   Item(id: 2, icon: #imageLiteral(resourceName: "Home"), title: "Neues"),
+					   Item(id: 3, icon: #imageLiteral(resourceName: "Home"), title: "Einstellungen")]
+
+	let navBar = NavigationBar()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,15 +31,13 @@ class CustomTabbarController: UIViewController {
 		setupNavigationBar()
 		setupTabbar()
 
-		NotificationCenter.default.addObserver(self, selector: #selector(didUpdatePointer(notification:)),
-											   name: Constants.NotificationNames.didUpdatePoint, object: nil)
 	}
 
 	func setupNavigationBar() {
 		let topView = UIView()
 		topView.backgroundColor = Constants.Colors.tabbarBackground
-		let navBar = NavigationBar()
 
+		navBar.delegate = self
 		view.addSubview(navBar)
 		view.addSubview(topView)
 
@@ -49,6 +55,7 @@ class CustomTabbarController: UIViewController {
 		bottomView.backgroundColor = Constants.Colors.tabbarBackground
 
 		let tabbar = CustomTabbar(items: tabbarItems)
+		tabbar.delegate = self
 		view.addSubview(tabbar)
 		view.addSubview(bottomView)
 
@@ -60,25 +67,23 @@ class CustomTabbarController: UIViewController {
 		bottomView.translatesAutoresizingMaskIntoConstraints = false
 		bottomView.topAnchor.constraint(equalTo: tabbar.bottomAnchor, constant: 0).isActive = true
 	}
+}
 
-	deinit {
-		NotificationCenter.default.removeObserver(self)
+extension CustomTabbarController: CustomTabbarDelegate, NavigationBarDelegate {
+	func toggleMenu() {
+		delegate?.toggleMenu()
 	}
 
-	@objc func didUpdatePointer(notification: Notification) {
-		if let point = notification.object as? CGPoint {
-
-			let hittestResult = view.hitTest(point, with: nil)
-
-			for (index, button) in Buttons.shared.getButtons().enumerated() {
-				if button.button == hittestResult {
-					button.button.setBorder(borderWidth: 4, borderColor: UIColor.black.cgColor)
-					Buttons.shared.setSelection(index: index, selected: true)
-				} else {
-					button.button.setBorder(borderWidth: 0, borderColor: UIColor.black.cgColor)
-					Buttons.shared.setSelection(index: index, selected: false)
-				}
-			}
+	func sendTabbarAction(key: Int) {
+		switch key {
+		case 1:
+			navBar.setTitle(title: "Home")
+		case 2:
+			navBar.setTitle(title: "Neues")
+		case 3:
+			navBar.setTitle(title: "Settings")
+		default:
+			break
 		}
 	}
 }

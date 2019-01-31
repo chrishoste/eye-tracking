@@ -171,6 +171,24 @@
 			path = NavigationBar;
 			sourceTree = "<group>";
 		};
+		EA24D9EC22022AA5006B42BA /* Eye Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				EAF1E31421CA4CE4009A3944 /* CalibrationViewController.swift */,
+				EA05F10721B67D0E00D2C356 /* ARSCNViewController.swift */,
+			);
+			path = "Eye Tracking";
+			sourceTree = "<group>";
+		};
+		EA24D9ED22022BB2006B42BA /* Test App */ = {
+			isa = PBXGroup;
+			children = (
+				EA6DBA6A21F1C30400F01EDB /* SlideMenu */,
+				EA28DB0921EF5B1B00A41E29 /* Tabbar Controller */,
+			);
+			path = "Test App";
+			sourceTree = "<group>";
+		};
 		EA28DB0921EF5B1B00A41E29 /* Tabbar Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +234,7 @@
 				EA61773F21B026DA001F978B /* AppDelegate.swift */,
 				EA00EBA121C8FDDE00A30258 /* Singelton */,
 				EA61776F21B0276E001F978B /* ViewController */,
+				EA00EB9D21C7F0AE00A30258 /* Custom Views */,
 				EA61776D21B02744001F978B /* Storyboards */,
 				EA61777021B02788001F978B /* Helper */,
 				EA61776E21B0275C001F978B /* Ressources */,
@@ -261,12 +280,8 @@
 		EA61776F21B0276E001F978B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				EA6DBA6A21F1C30400F01EDB /* SlideMenu */,
-				EA28DB0921EF5B1B00A41E29 /* Tabbar Controller */,
-				EA00EB9D21C7F0AE00A30258 /* Custom Views */,
-				EA05F10721B67D0E00D2C356 /* ARSCNViewController.swift */,
-				EAF1E30F21C93C67009A3944 /* TestViewController.swift */,
-				EAF1E31421CA4CE4009A3944 /* CalibrationViewController.swift */,
+				EA24D9EC22022AA5006B42BA /* Eye Tracking */,
+				EA24D9ED22022BB2006B42BA /* Test App */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -287,6 +302,7 @@
 		EA6DBA6A21F1C30400F01EDB /* SlideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				EAF1E30F21C93C67009A3944 /* TestViewController.swift */,
 				EA6DBA6B21F1C31A00F01EDB /* BaseSlideController.swift */,
 			);
 			path = SlideMenu;

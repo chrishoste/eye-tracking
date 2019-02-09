@@ -12,36 +12,14 @@ import ARKit
 
 class ARSCNViewController: UIViewController {
 
-	var sceneView: ARSCNView!
-	let configuration = ARFaceTrackingConfiguration()
+	fileprivate var sceneView: ARSCNView!
 
 	var enterEnabled = true
 
-	var leftEyeNode: SCNNode = {
-		let geometry = SCNCone(topRadius: 0.005, bottomRadius: 0, height: 0.1)
-		geometry.radialSegmentCount = 3
-		geometry.firstMaterial?.diffuse.contents = UIColor.red
-		let node = SCNNode()
-		node.geometry = geometry
-		node.eulerAngles.x = -.pi / 2
-		node.position.z = 0.1
-		let parentNode = SCNNode()
-		parentNode.addChildNode(node)
-		return parentNode
-	}()
+	let pointer = Pointer()
 
-	var rightEyeNode: SCNNode = {
-		let geometry = SCNCone(topRadius: 0.005, bottomRadius: 0, height: 0.1)
-		geometry.radialSegmentCount = 3
-		geometry.firstMaterial?.diffuse.contents = UIColor.blue
-		let node = SCNNode()
-		node.geometry = geometry
-		node.eulerAngles.x = -.pi / 2
-		node.position.z = 0.1
-		let parentNode = SCNNode()
-		parentNode.addChildNode(node)
-		return parentNode
-	}()
+	var leftEyeNode = SCNNode()
+	var rightEyeNode = SCNNode()
 
 	var endPointLeftEye: SCNNode = {
 		let node = SCNNode()
@@ -56,17 +34,13 @@ class ARSCNViewController: UIViewController {
 	}()
 
 	var nodeInFrontOfScreen: SCNNode = {
-
-		let screenGeometry = SCNPlane(width: 1, height: 1)
-		screenGeometry.firstMaterial?.isDoubleSided = true
-		screenGeometry.firstMaterial?.fillMode = .fill
-
 		let node = SCNNode()
-		node.geometry = screenGeometry
+		node.geometry = SCNPlane()
 		return node
 	}()
 
-	let crosshair = Crosshair(size: .init(width: 50, height: 50))
+	let crosshair = Crosshair(radius: 25)
+
 	let appView: UIView = {
 		let view = UIView()
 		view.backgroundColor = .white
@@ -77,7 +51,7 @@ class ARSCNViewController: UIViewController {
 		super.viewDidLoad()
 
 		guard ARFaceTrackingConfiguration.isSupported else {
-			fatalError("Face tracking is not supported on this device")
+			fatalError("Face-Tracking ist auf diese Gerät nicht verfügbar!")
 		}
 
 		setupARSCNView()
@@ -85,13 +59,10 @@ class ARSCNViewController: UIViewController {
 		addApp()
 	}
 
-	override func viewDidLayoutSubviews() {
-		super.viewDidLayoutSubviews()
-	}
-
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		//sceneView.isHidden = true
+		let configuration = ARFaceTrackingConfiguration()
 		sceneView.session.run(configuration)
 	}
 
@@ -115,12 +86,10 @@ class ARSCNViewController: UIViewController {
 		var rightEyeLocation = CGPoint()
 
 		let leftEyeResult = nodeInFrontOfScreen.hitTestWithSegment(from: endPointLeftEye.worldPosition,
-														  to: leftEyeNode.worldPosition,
-														  options: nil)
+														  to: leftEyeNode.worldPosition)
 
 		let rightEyeResult = nodeInFrontOfScreen.hitTestWithSegment(from: endPointRightEye.worldPosition,
-														  to: rightEyeNode.worldPosition,
-														  options: nil)
+														  to: rightEyeNode.worldPosition)
 
 		if leftEyeResult.count > 0 || rightEyeResult.count > 0 {
 
@@ -140,15 +109,15 @@ class ARSCNViewController: UIViewController {
 
 			let point: CGPoint = {
 				var point = CGPoint()
-				let pointX = ((leftEyeLocation.x + rightEyeLocation.x) / 2) + Pointer.shared.getCompensation(compensation: .WIDTH)
-				let pointY = (-(leftEyeLocation.y + rightEyeLocation.y) / 2) + Pointer.shared.getCompensation(compensation: .HEIGHT)
+				let pointX = ((leftEyeLocation.x + rightEyeLocation.x) / 2) + 150
+				let pointY = (-(leftEyeLocation.y + rightEyeLocation.y) / 2) * 1.2
 
 				point.x = pointX.clamped(to: Constants.Ranges.widthRange)
 				point.y = pointY.clamped(to: Constants.Ranges.heightRange)
 				return point
 			}()
 
-			Pointer.shared.setNewPoint(point)
+			pointer.setNewPoint(point)
 		}
 	}
 
@@ -161,13 +130,11 @@ class ARSCNViewController: UIViewController {
 			if mouthPucker.floatValue > 0.47 {
 				DispatchQueue.main.async {
 					self.enterEnabled = false
-					debugPrint("disabled")
-					Buttons.shared.sendAction()
+					NotificationCenter.default.post(name: Constants.NotificationNames.selectTrackableButton, object: nil)
 				}
 			}
 		} else {
 			if mouthPucker.floatValue < 0.44 {
-				debugPrint("enabled")
 				self.enterEnabled = true
 			}
 		}

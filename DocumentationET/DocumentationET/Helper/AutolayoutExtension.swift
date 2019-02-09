@@ -76,7 +76,7 @@ extension UIView {
 	}
 
 	func constraintToConstantsAndSafeArea(top: CGFloat? = nil, leading: CGFloat? = nil,
-							   trailing: CGFloat? = nil, bottom: CGFloat? = nil) {
+										  trailing: CGFloat? = nil, bottom: CGFloat? = nil) {
 		self.translatesAutoresizingMaskIntoConstraints = false
 
 		if let superView = self.superview {
@@ -121,17 +121,10 @@ extension ARSCNView {
 		self.translatesAutoresizingMaskIntoConstraints = false
 
 		if let superView = self.superview {
-			self.topAnchor.constraint(equalTo:
-				superView.topAnchor).isActive = true
-
-			self.leadingAnchor.constraint(equalTo:
-				superView.leadingAnchor).isActive = true
-
-			self.trailingAnchor.constraint(equalTo:
-				superView.trailingAnchor).isActive = true
-
-			self.bottomAnchor.constraint(equalTo:
-				superView.bottomAnchor).isActive = true
+			self.topAnchor.constraint(equalTo: superView.topAnchor).isActive = true
+			self.leadingAnchor.constraint(equalTo: superView.leadingAnchor).isActive = true
+			self.trailingAnchor.constraint(equalTo: superView.trailingAnchor).isActive = true
+			self.bottomAnchor.constraint(equalTo: superView.bottomAnchor).isActive = true
 		}
 	}
 }

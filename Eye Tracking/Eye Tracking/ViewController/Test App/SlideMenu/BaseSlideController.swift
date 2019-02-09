@@ -32,12 +32,10 @@ class BaseSlideController: UIViewController {
 		view.backgroundColor = UIColor(white: 0, alpha: 0.4)
 		view.alpha = 0
 
-		let button = UIButton()
+		let button = TrackableButton()
 		button.addTarget(self, action: #selector(BaseSlideController.doClose), for: .touchUpInside)
 		view.addSubview(button)
 		button.constraintToConstants(top: 0, leading: 0, trailing: 0, bottom: 0)
-
-		Buttons.shared.append(button: button)
 		return view
 	}()
 
@@ -141,16 +139,7 @@ class BaseSlideController: UIViewController {
 		if let point = notification.object as? CGPoint {
 
 			let hittestResult = view.hitTest(point, with: nil)
-
-			for (index, button) in Buttons.shared.getButtons().enumerated() {
-				if button.button == hittestResult {
-					button.button.setBorder(borderWidth: 4, borderColor: UIColor.black.cgColor)
-					Buttons.shared.setSelection(index: index, selected: true)
-				} else {
-					button.button.setBorder(borderWidth: 0, borderColor: UIColor.black.cgColor)
-					Buttons.shared.setSelection(index: index, selected: false)
-				}
-			}
+			NotificationCenter.default.post(name: Constants.NotificationNames.trackableButton, object: hittestResult)
 		}
 	}
 }

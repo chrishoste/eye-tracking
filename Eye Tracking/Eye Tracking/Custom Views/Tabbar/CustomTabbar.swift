@@ -30,15 +30,13 @@ class TabbarItem: UIView {
 		return image
 	}()
 
-	let button: UIButton = {
-		let button = UIButton()
+	let button: TrackableButton = {
+		let button = TrackableButton()
 		return button
 	}()
 
 	init(item: Item) {
 		super.init(frame: .zero)
-
-		Buttons.shared.append(button: button)
 		setupStackView(item)
 	}
 

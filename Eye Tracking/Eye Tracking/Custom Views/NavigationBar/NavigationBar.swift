@@ -25,15 +25,15 @@ class NavigationBar: UIView {
 		return label
 	}()
 
-	private let rightButton: UIButton = {
-		let button = UIButton()
+	private let rightButton: TrackableButton = {
+		let button = TrackableButton()
 		button.setImage(#imageLiteral(resourceName: "Plus"), for: .normal)
 		button.tintColor = .black
 		button.imageEdgeInsets = .init(top: 0, left: 30, bottom: 0, right: 0)
 		return button
 	}()
-	private let leftButton: UIButton = {
-		let button = UIButton()
+	private let leftButton: TrackableButton = {
+		let button = TrackableButton()
 		button.setImage(#imageLiteral(resourceName: "Menu"), for: .normal)
 		button.tintColor = .black
 		button.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 30)
@@ -44,8 +44,6 @@ class NavigationBar: UIView {
 	init() {
 		super.init(frame: .zero)
 		backgroundColor = Constants.Colors.tabbarBackground
-
-		Buttons.shared.append(buttons: [rightButton, leftButton])
 		setupStackView()
 	}
 

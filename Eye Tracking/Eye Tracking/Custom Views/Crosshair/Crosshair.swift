@@ -23,8 +23,10 @@ class Crosshair: UIView {
 		return view
 	}()
 
-	init(size: CGSize) {
+	init(radius: CGFloat) {
 		super.init(frame: .zero)
+
+		let size = CGSize(width: radius*2, height: radius*2)
 
 		setupView(size)
 		setupSubviews()
